@@ -13,7 +13,9 @@
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewCompact.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewLeftMinimalCompact.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationLeftFluent.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationTopFluent.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewTop.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewTopFluent.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewBottom.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
@@ -49,6 +51,10 @@
             <Trigger Property="PaneDisplayMode" Value="Top">
                 <Setter Property="Template" Value="{StaticResource TopNavigationViewTemplate}" />
                 <Setter Property="ItemTemplate" Value="{StaticResource TopCompactNavigationViewItemTemplate}" />
+            </Trigger>
+            <Trigger Property="PaneDisplayMode" Value="TopFluent">
+                <Setter Property="Template" Value="{StaticResource TopFluentNavigationViewTemplate}" />
+                <Setter Property="ItemTemplate" Value="{StaticResource TopFluentNavigationViewItemTemplate}" />
             </Trigger>
             <Trigger Property="PaneDisplayMode" Value="Bottom">
                 <Setter Property="Template" Value="{StaticResource BottomNavigationViewTemplate}" />

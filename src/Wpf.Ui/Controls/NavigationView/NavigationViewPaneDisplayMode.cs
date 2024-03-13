@@ -36,6 +36,11 @@ public enum NavigationViewPaneDisplayMode
     Top,
 
     /// <summary>
+    /// The pane is shown at the top of the control. With larger icons.
+    /// </summary>
+    TopFluent,
+
+    /// <summary>
     /// The pane is shown at the bottom of the control.
     /// </summary>
     Bottom
