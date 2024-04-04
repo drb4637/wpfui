@@ -9,6 +9,18 @@
         <ResourceDictionary Source="pack://application:,,,/Wpf.Ui;component/Controls/NavigationView/NavigationViewConstants.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <ControlTemplate x:Key="CustomNavigationViewContentPresenterTemplate" TargetType="{x:Type controls:NavigationViewContentPresenter}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ContentPresenter x:Name="PART_FrameCP" Grid.Row="0" Grid.Column="0" Margin="{TemplateBinding Padding}" />
+        </Grid>
+    </ControlTemplate>
+
     <ControlTemplate x:Key="TopFluentNavigationViewTemplate" TargetType="{x:Type controls:NavigationView}">
         <Grid>
             <Grid.RowDefinitions>
@@ -105,12 +117,14 @@
                     Visibility="{TemplateBinding HeaderVisibility}" />
 
                 <!--  Page content  -->
+
                 <controls:NavigationViewContentPresenter
                     x:Name="PART_NavigationViewContentPresenter"
                     Grid.Row="1"
                     Padding="{TemplateBinding Padding}"
                     Transition="{TemplateBinding Transition}"
-                    TransitionDuration="{TemplateBinding TransitionDuration}" />
+                    TransitionDuration="{TemplateBinding TransitionDuration}" 
+                    Template="{StaticResource CustomNavigationViewContentPresenterTemplate}"/>
 
                 <!--  Overlay  -->
                 <ContentPresenter
@@ -121,6 +135,7 @@
             </Grid>
         </Grid>
     </ControlTemplate>
+
 
     <ControlTemplate x:Key="TopFluentCompactNavigationViewItemTemplate" TargetType="{x:Type controls:NavigationViewItem}">
         <Grid>
